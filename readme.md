@@ -6,7 +6,7 @@
 
  This project is build on lumen framework (laravel subset). So you shoul be familliare with it.
 
- You should follow this guide to install lumen, and than to edit your .env file
+ You should follow <a href="http://lumen.laravel.com/docs/installation">this guide</a> to install lumen, and than to edit your .env file
 
  After installing lumen, and everything else, you should change your database credentials in .env , this is how mine looks:
  DB_CONNECTION=mysql
