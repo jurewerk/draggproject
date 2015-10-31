@@ -1,5 +1,7 @@
 <?php
+
 use App\Item;
+
 $app->get('/', function() use ($app) {
     $items = Item::orderBy('item_order','asc')->get();
     return view('index', ['items' => $items]);

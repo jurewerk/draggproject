@@ -1,10 +1,14 @@
 <?php
-
+/*
+* Author : Jure Werk
+* Email : jure.werk@gmail.com
+* Website : http://www.pcandweb.si
+* Subject : Dynamic Drag and Drop with jQuery and PHP
+*/
 namespace App\Http\Controllers;
 
 use App\Item;
 use Illuminate\Http\Request;
-
 use Laravel\Lumen\Routing\Controller as BaseController;
 
 class ItemController extends BaseController
