@@ -4,7 +4,11 @@
 
  You need a database with table "items". Please check (or import) items.sql dump for test data.
 
- You shoul change your database credentials in .env , this is how my look:
+ This project is build on lumen framework (laravel subset). So you shoul be familliare with it.
+
+ You should follow this guide to install lumen, and than to edit your .env file
+
+ After installing lumen, and everything else, you should change your database credentials in .env , this is how mine looks:
  DB_CONNECTION=mysql
  DB_HOST=localhost
  DB_DATABASE=draggable
