@@ -17,7 +17,7 @@
 				@foreach ($items as $item)
 					<li id="{{$item->id}}">
 						<span>
-							<input type='button' onclick='javascript:deleteEntry({{$item->id}})' value='Delete'>
+							<input type='button' onclick='javascript:deleteItem({{$item->id}})' value='Delete'>
 							<br/>
 							<b>{{$item->title}}</b>
 						</span>

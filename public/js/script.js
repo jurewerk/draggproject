@@ -11,7 +11,7 @@ function openAddNew() {
         modal: true,
         buttons: {
             "Add item": function() {
-                addEntry(document.getElementById('newItem').value);
+                addItem(document.getElementById('newItem').value);
                 document.getElementById('newItem').value = '';
                 $( this ).dialog( "close" );
             },
@@ -23,7 +23,7 @@ function openAddNew() {
     });
 }
 //Add an item
-function addEntry(item) {
+function addItem(item) {
 
     var url = "add-item";
     $.ajax({
@@ -35,22 +35,23 @@ function addEntry(item) {
             var li = document.createElement("li");
             li.setAttribute("id", entry.id)
             ul.appendChild(li)
-            document.getElementById(entry.id).innerHTML = "<span><input type='button' onclick='javascript:deleteEntry("+entry.id+")' value='Delete'><br/><b>"+item+"</b></span>";
+            document.getElementById(entry.id).innerHTML = "<span><input type='button' onclick='javascript:deleteItem("+entry.id+")' value='Delete'><br/><b>"+item+"</b></span>";
 
         }
     });
 }
 
 //Delete an item
-function deleteEntry(id) {
+function deleteItem(id) {
     var url = "delete-item";
     $.ajax({
         type: 'POST',
         url: url,
         data: {id: id},
-        success:function(data) {
-                var elem = document.getElementById(id);
-                elem.parentNode.removeChild(elem);
+        success:function() {
+            // Deleted..
+            var elem = document.getElementById(id);
+            elem.parentNode.removeChild(elem);
         }
     });
 }
