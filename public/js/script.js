@@ -48,12 +48,8 @@ function deleteEntry(id) {
         url: url,
         data: {id: id},
         success:function(data) {
-            if (data) {
                 var elem = document.getElementById(id);
                 elem.parentNode.removeChild(elem);
-            } else {
-                // DO SOMETHING }
-            }
         }
     });
 }

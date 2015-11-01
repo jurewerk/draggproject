@@ -25,7 +25,8 @@ class ItemController extends BaseController
     public function add(Request $request) //Insert item
     {
        //Get max item order id and add 1
-        $order = Item::orderBy('item_order','desc')->pluck('item_order');;
+        $order = Item::orderBy('item_order','desc')->pluck('item_order');
+
         $order++;
         $item = new Item;
         $item->title = $request->input('entry');;
