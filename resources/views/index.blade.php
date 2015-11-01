@@ -18,7 +18,6 @@
 					<li id="{{$item->id}}">
 						<span>
 							<input type='button' onclick='javascript:deleteEntry({{$item->id}})' value='Delete'>
-							<input type='button' onclick='javascript:editEntry({{$item->id}})' value='Edit'>
 							<br/>
 							<b>{{$item->title}}</b>
 						</span>

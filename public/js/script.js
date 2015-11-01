@@ -40,6 +40,7 @@ function addEntry(item) {
         }
     });
 }
+
 //Delete an item
 function deleteEntry(id) {
     var url = "delete-item";
