@@ -29,12 +29,22 @@ class ItemController extends BaseController
 
         $order++;
         $item = new Item;
-        $item->title = $request->input('entry');;
+        $item->title = $request->input('entry');
         $item->item_order = $order;
         $item->save();
 
         $returnId = $item->id;
         return array("id" => $returnId);
+    }
+    public function edit(Request $request) //Insert item
+    {
+        //Get max item order id and add 1
+        $id = $request->input('id');
+        $item = Item::find($id);
+        $item->title = $request->input('text');;
+        $item->save();
+
+        return "updated!";
     }
     public function sort(Request $itemsOrder)
     {

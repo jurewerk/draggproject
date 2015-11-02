@@ -8,6 +8,7 @@ $app->get('/', function() use ($app) {
 });
 
 $app->post('/add-item', 'App\Http\Controllers\ItemController@add');
+$app->post('/edit-item', 'App\Http\Controllers\ItemController@edit');
 $app->post('/delete-item', 'App\Http\Controllers\ItemController@delete');
 $app->post('/sort-items', 'App\Http\Controllers\ItemController@sort');
 

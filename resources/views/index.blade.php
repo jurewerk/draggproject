@@ -18,9 +18,13 @@
 					<li id="{{$item->id}}">
 						<span>
 							<input type='button' onclick='javascript:deleteItem({{$item->id}})' value='Delete'>
+							<input type='button' onclick='javascript:editItem({{$item->id}})' value='Edit'>
 							<br/>
-							<b>{{$item->title}}</b>
+							<b id="item{{$item->id}}">{{$item->title}}</b>
 						</span>
+						<div id="edit-{{$item->id}}" title="Edit item" style="display: none;">
+							<textarea name="item" id="editItem-{{$item->id}}">{{$item->title}}</textarea>
+						</div>
 					</li>
 				@endforeach
 			</ul>

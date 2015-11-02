@@ -22,6 +22,7 @@ function openAddNew() {
 
     });
 }
+
 //Add an item
 function addItem(item) {
 
@@ -35,12 +36,46 @@ function addItem(item) {
             var li = document.createElement("li");
             li.setAttribute("id", entry.id)
             ul.appendChild(li)
-            document.getElementById(entry.id).innerHTML = "<span><input type='button' onclick='javascript:deleteItem("+entry.id+")' value='Delete'><br/><b>"+item+"</b></span>";
+            document.getElementById(entry.id).innerHTML = "<span>" +
+                "<input type='button' onclick='javascript:deleteItem("+entry.id+")' value='Delete'>" +
+                "<input type='button' onclick='javascript:editItem("+entry.id+")' value='Edit'>" +
+                "<br/>" +
+                "<b id='item"+entry.id+"'>"+item+"</b></span>" +
+                "<div id='editModal-"+entry.id+"' title='Edit item' style='display: none;'>" +
+                    "<textarea name='item' id='editModalTextArea-"+entry.id+"'>"+item+"</textarea>" +
+                "</div>";
 
         }
     });
 }
+function editItem(textid) {
 
+    $( "#editModal-"+textid ).dialog({
+        modal: true,
+        buttons: {
+            "Edit item": function() {
+                var url = 'edit-item';
+                var text = document.getElementById('editModalTextArea-'+textid).value;
+
+                $.ajax({
+                    type: 'POST',
+                    url: url,
+                    data: {id: textid, text: text},
+                    success: function () {
+                        //edited , now update tex
+                        document.getElementById('item'+textid).innerHTML = text;
+
+                    }
+                });
+                $( this ).dialog( "close" );
+            },
+            Cancel: function() {
+                $( this ).dialog( "close" );
+            }
+        }
+
+    });
+}
 //Delete an item
 function deleteItem(id) {
     var url = "delete-item";
