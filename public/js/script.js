@@ -44,16 +44,19 @@ function addItem(item) {
 //Delete an item
 function deleteItem(id) {
     var url = "delete-item";
-    $.ajax({
-        type: 'POST',
-        url: url,
-        data: {id: id},
-        success:function() {
-            // Deleted..
-            var elem = document.getElementById(id);
-            elem.parentNode.removeChild(elem);
-        }
-    });
+
+    if (confirm("You will delete an item. Continue?")) {
+        $.ajax({
+            type: 'POST',
+            url: url,
+            data: {id: id},
+            success: function () {
+                // Deleted..
+                var elem = document.getElementById(id);
+                elem.parentNode.removeChild(elem);
+            }
+        });
+    }
 }
 //Sorting items
 $(function () {

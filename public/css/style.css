@@ -50,7 +50,7 @@ body {
 	height: auto;
 
 	float: left;
-	cursor: move;
+	cursor: grab;
 	display: block;
 	word-wrap: break-word;
 }
