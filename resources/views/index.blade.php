@@ -22,8 +22,8 @@
 							<br/>
 							<b id="item{{$item->id}}">{{$item->title}}</b>
 						</span>
-						<div id="edit-{{$item->id}}" title="Edit item" style="display: none;">
-							<textarea name="item" id="editItem-{{$item->id}}">{{$item->title}}</textarea>
+						<div id="editModal-{{$item->id}}" title="Edit item" style="display: none;">
+							<textarea name="item" id="editModalTextArea-{{$item->id}}">{{$item->title}}</textarea>
 						</div>
 					</li>
 				@endforeach
